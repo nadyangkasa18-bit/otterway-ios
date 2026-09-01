@@ -34,20 +34,16 @@ npm run typecheck
 npm run build
 ```
 
+The current `main` branch has been verified in a clean Node 22 GitHub Actions runner: dependency installation, TypeScript validation, and `next build` all pass.
+
 ## Deploy to Vercel
 
-This is a standard Next.js App Router project. Import the directory/repository into a new Vercel project, or from the project root run:
-
-```bash
-vercel
-```
-
-That creates a preview deployment. Do not promote it to production until the prototype is approved.
+This is a standard Next.js App Router project. Vercel configuration is defined in `vercel.json`, and Node is pinned to `22.x` in `package.json`.
 
 ## Implementation notes
 
 - Next.js + React + TypeScript
-- `next/font` for Geist and Geist Mono
-- `next/image` for travel photography
+- System font stack with Geist-compatible CSS fallbacks to avoid build-time external font fetching
+- CSS background images for travel photography
 - Responsive CSS without a UI framework, using semantic tokens copied from the current OtterWay direction
 - No authentication, payments, supplier APIs, or production AI orchestration by design
